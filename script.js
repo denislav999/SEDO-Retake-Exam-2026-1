@@ -20,23 +20,17 @@ function getRandomQuote() {
     return quotes[randomIndex];
 }
 
-// *** Helper to get initials ***
-function getInitials(name) {
-    return name.split(' ').map(word => word[0]).join('');
-}
-
-// *** Modify displayQuote ***
 function displayQuote() {
     const quote = getRandomQuote();
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
-    // *** Display initials along with name ***
-    const initials = getInitials(quote.author);
-    quoteAuthorElement.textContent = `- ${quote.author} (${initials})`; // MODIFIED LINE
+    quoteAuthorElement.textContent = `- ${quote.author}`;
 }
 
 // --- Event Listeners ---
 // Display a random quote when the button is clicked
 if (newQuoteButton) { // Check if button exists before adding listener
+    // *** Add log confirming button found ***
+    console.log("Button found, adding listener."); // NEW LINE
     newQuoteButton.addEventListener('click', displayQuote);
 } else {
     console.error("Button with ID 'new-quote-btn' not found.");
