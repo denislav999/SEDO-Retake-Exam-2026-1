@@ -69,10 +69,8 @@ button {
 
 button:hover {
     background-color: #4a54c4;
-    border-color: #3e47a1; /* Keep border color on hover consistent */
 }
 
 button:active {
     background-color: #3e47a1;
-    border-color: #3e47a1; /* Keep border color on active consistent */
 }
